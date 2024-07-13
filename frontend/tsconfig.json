@@ -13,9 +13,6 @@
       "@styles/*": ["src/styles/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/components/SignIn.tsx"],
   "exclude": ["node_modules"]
 }
-
-
-

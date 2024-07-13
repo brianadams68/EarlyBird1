@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
-import Bags from "./components/Accessories/Bags"
-import Hats from "./components/Accessories/Hats"
-import GymSocks from "./components/Accessories/GymSocks"
+import Bags from "./components/Accessories/Bags";
+import Hats from "./components/Accessories/Hats";
+import GymSocks from "./components/Accessories/GymSocks";
 import Tops from "./components/Clothing/Tops";
 import BrowseAll from "./components/Clothing/BrowseAll";
 import Jackets from "./components/Clothing/Jackets";
@@ -13,9 +13,8 @@ import Leggins from "./components/Clothing/Leggins";
 import Pants from "./components/Clothing/Pants";
 import Sweaters from "./components/Clothing/Sweaters";
 import TShirts from "./components/Clothing/TShirts";
-import Signup from './components/SignUp';
-import Signin from './components/SignIn';
-
+import Signup from "./components/SignUp";
+import Signin from "./components/SignIn";
 
 function App() {
   return (

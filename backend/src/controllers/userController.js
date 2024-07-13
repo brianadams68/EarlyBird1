@@ -24,7 +24,7 @@ exports.registerUser = async (req, res) => {
     await user.save();
 
     // Generate JWT token
-    const token = jwt.sign({ userId: user._id }, 'your_jwt_secret', { expiresIn: '1h' });
+    const token = jwt.sign({ userId: user._id }, 'earlybird', { expiresIn: '1h' });
 
     // Respond with success message and token
     res.status(201).json({ message: 'User created successfully', token });
@@ -48,7 +48,7 @@ exports.loginUser = async (req, res) => {
     }
 
     // Generate JWT token
-    const token = jwt.sign({ userId: user._id }, 'your_jwt_secret', { expiresIn: '1h' });
+    const token = jwt.sign({ userId: user._id }, 'earlybird', { expiresIn: '1h' });
 
     // Respond with token
     res.json({ token });

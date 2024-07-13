@@ -1,20 +1,28 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState } from "react";
+import axios from "axios";
+console.log('Axios:', axios);
 
 const SignUp = () => {
-  const [formData, setFormData] = useState({ username: '', email: '', password: '' });
+  const [formData, setFormData] = useState({
+    username: "",
+    email: "",
+    password: "",
+  });
 
-  const handleChange = (e: { target: { name: any; value: any; }; }) => setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleChange = (e: { target: { name: any; value: any; }; }) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     try {
-      await axios.post('/api/auth/signup', formData);
-      alert('User created successfully');
-      // Optionally redirect or perform other actions upon successful sign-up
+      const response = await axios.post("/api/auth/signup", formData);
+      console.log("User signed up successfully:", response.data);
     } catch (error) {
-      console.error('Sign-up error', error);
-      alert('Sign-up failed');
+      console.error("Error signing up:", error);
     }
   };
 
@@ -35,7 +43,10 @@ const SignUp = () => {
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="username" className="block text-sm font-medium leading-6 text-gray-900">
+              <label
+                htmlFor="username"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
                 Username
               </label>
               <div className="mt-2">
@@ -53,7 +64,10 @@ const SignUp = () => {
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
                 Email address
               </label>
               <div className="mt-2">
@@ -71,7 +85,10 @@ const SignUp = () => {
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
+              <label
+                htmlFor="password"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
                 Password
               </label>
               <div className="mt-2">
@@ -99,8 +116,11 @@ const SignUp = () => {
           </form>
 
           <p className="mt-10 text-center text-sm text-gray-500">
-            Already have an account?{' '}
-            <a href="/sigin" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
+            Already have an account?{" "}
+            <a
+              href="/sigin"
+              className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
+            >
               Sign In
             </a>
           </p>
@@ -111,4 +131,3 @@ const SignUp = () => {
 };
 
 export default SignUp;
-
