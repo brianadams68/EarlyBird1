@@ -13,6 +13,8 @@ import Leggins from "./components/Clothing/Leggins";
 import Pants from "./components/Clothing/Pants";
 import Sweaters from "./components/Clothing/Sweaters";
 import TShirts from "./components/Clothing/TShirts";
+import Signup from './components/SignUp';
+import Signin from './components/SignIn';
 
 
 function App() {
@@ -35,6 +37,10 @@ function App() {
         <Route path="/accessories/bags" element={<Bags />} />
         <Route path="/accessories/hats" element={<Hats />} />
         <Route path="/accessories/belts" element={<GymSocks />} />
+
+        {/* Authentication */}
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/signin" element={<Signin />} />
       </Routes>
     </Router>
   );

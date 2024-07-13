@@ -244,7 +244,7 @@ export default function StoreNavigation() {
             <div className="space-y-6 border-t border-gray-200 px-4 py-6">
               <div className="flow-root">
                 <a
-                  href="#"
+                  href="/signin"
                   className="-m-2 block p-2 font-medium text-gray-900"
                 >
                   Sign in
@@ -252,7 +252,7 @@ export default function StoreNavigation() {
               </div>
               <div className="flow-root">
                 <a
-                  href="#"
+                  href="signup"
                   className="-m-2 block p-2 font-medium text-gray-900"
                 >
                   Create account
@@ -440,14 +440,14 @@ export default function StoreNavigation() {
               <div className="ml-auto flex items-center">
                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
                   <a
-                    href="#"
+                    href="/signin"
                     className="text-sm font-medium text-gray-700 hover:text-gray-800"
                   >
                     Sign in
                   </a>
                   <span aria-hidden="true" className="h-6 w-px bg-gray-200" />
                   <a
-                    href="#"
+                    href="/signup"
                     className="text-sm font-medium text-gray-700 hover:text-gray-800"
                   >
                     Create account
