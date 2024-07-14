@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-console.log('Axios:', axios);
+console.log("Axios:", axios);
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -9,14 +9,14 @@ const SignUp = () => {
     password: "",
   });
 
-  const handleChange = (e: { target: { name: any; value: any; }; }) => {
+  const handleChange = (e: { target: { name: any; value: any } }) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
   };
 
-  const handleSubmit = async (e: { preventDefault: () => void; }) => {
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     try {
       const response = await axios.post("/api/auth/signup", formData);
@@ -30,11 +30,14 @@ const SignUp = () => {
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <img
-            alt="Your Company"
-            src="/2.png"
-            className="mx-auto h-20 w-auto"
-          />
+          <a href="/">
+            <img
+              alt="Your Company"
+              src="/2.png"
+              className="mx-auto h-20 w-auto"
+            />
+          </a>
+
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
             Create an Account
           </h2>
@@ -118,7 +121,7 @@ const SignUp = () => {
           <p className="mt-10 text-center text-sm text-gray-500">
             Already have an account?{" "}
             <a
-              href="/sigin"
+              href="/signin"
               className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
             >
               Sign In

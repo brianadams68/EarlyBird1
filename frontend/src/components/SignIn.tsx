@@ -1,18 +1,21 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState } from "react";
+import axios from "axios";
 
 export default function SignIn() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleSignIn = async (e: { preventDefault: () => void; }) => {
+  const handleSignIn = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     try {
-      const response = await axios.post('/api/auth/signin', { email, password });
+      const response = await axios.post("/api/auth/signin", {
+        email,
+        password,
+      });
       console.log(response.data); // Handle success (e.g., store token)
       // Redirect or handle successful login
     } catch (error) {
-      console.error('Sign-in failed:', error); // Handle error
+      console.error("Sign-in failed:", error); // Handle error
     }
   };
 
@@ -20,11 +23,14 @@ export default function SignIn() {
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <img
-            alt="Your Company"
-            src="/2.png"
-            className="mx-auto h-20 w-auto"
-          />
+          <a href="/">
+            <img
+              alt="Your Company"
+              src="/2.png"
+              className="mx-auto h-20 w-auto"
+            />
+          </a>
+
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
             Sign in to your account
           </h2>
@@ -33,7 +39,10 @@ export default function SignIn() {
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
           <form onSubmit={handleSignIn} className="space-y-6">
             <div>
-              <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
                 Email address
               </label>
               <div className="mt-2">
@@ -52,11 +61,17 @@ export default function SignIn() {
 
             <div>
               <div className="flex items-center justify-between">
-                <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
+                <label
+                  htmlFor="password"
+                  className="block text-sm font-medium leading-6 text-gray-900"
+                >
                   Password
                 </label>
                 <div className="text-sm">
-                  <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
+                  <a
+                    href="#"
+                    className="font-semibold text-indigo-600 hover:text-indigo-500"
+                  >
                     Forgot password?
                   </a>
                 </div>
@@ -86,8 +101,11 @@ export default function SignIn() {
           </form>
 
           <p className="mt-10 text-center text-sm text-gray-500">
-            Not a member?{' '}
-            <a href="/signup" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
+            Not a member?{" "}
+            <a
+              href="/signup"
+              className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
+            >
               Start a 14 day free trial
             </a>
           </p>
@@ -96,4 +114,3 @@ export default function SignIn() {
     </>
   );
 }
-
