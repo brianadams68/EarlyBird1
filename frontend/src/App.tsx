@@ -15,6 +15,7 @@ import Sweaters from "./components/Clothing/Sweaters";
 import TShirts from "./components/Clothing/TShirts";
 import Signup from "./components/SignUp";
 import Signin from "./components/SignIn";
+import CheckoutForm from "./components/CheckoutForm";
 
 function App() {
   return (
@@ -40,6 +41,9 @@ function App() {
         {/* Authentication */}
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<Signin />} />
+
+        {/* Checkout Form */}
+        <Route path="/checkoutform" element={<CheckoutForm />} />
       </Routes>
     </Router>
   );
